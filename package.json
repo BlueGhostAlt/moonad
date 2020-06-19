@@ -18,5 +18,7 @@
         "semantic-release": "^17.0.8",
         "typescript": "^3.9.5"
     },
-    "scripts": {}
+    "scripts": {
+        "build": "rollup -c ./rollup.config.ts"
+    }
 }
