@@ -10,6 +10,9 @@
     "module": "dist/bundle.esm.js",
     "browser": "dist/bundle.umd.js",
     "typings": "dist/bundle.esm.d.ts",
+    "files": [
+        "dist"
+    ],
     "devDependencies": {
         "@rollup/plugin-commonjs": "^13.0.0",
         "@rollup/plugin-node-resolve": "^8.0.1",
