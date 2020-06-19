@@ -1,1 +1,1 @@
-export const helloWorld = () => "Hello world from Moonad!"
+export { Lazy } from "./classes/Lazy"
