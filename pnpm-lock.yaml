@@ -3,11 +3,12 @@ dependencies:
   '@rollup/plugin-node-resolve': 8.0.1_rollup@2.17.1
   '@semantic-release/changelog': 5.0.1_semantic-release@17.0.8
   '@semantic-release/git': 9.0.0_semantic-release@17.0.8
-  '@wessberg/rollup-plugin-ts': 1.2.25_rollup@2.17.1
+  '@wessberg/rollup-plugin-ts': 1.2.25_rollup@2.17.1+typescript@3.9.5
   rollup: 2.17.1
   rollup-plugin-filesize: 9.0.1
   rollup-plugin-terser: 6.1.0_rollup@2.17.1
   semantic-release: 17.0.8_semantic-release@17.0.8
+  typescript: 3.9.5
 lockfileVersion: 5.1
 packages:
   /@babel/code-frame/7.10.1:
@@ -1343,7 +1344,7 @@ packages:
       node: '>=8.0.0'
     resolution:
       integrity: sha512-ZxC4uWO10MAUfLMyED6bpq3jR6+25sW3PRZsM28EquaUUnSZfWgx26YsKA9TWGW/3lFOfc+T8QUAG+ln9owQDA==
-  /@wessberg/rollup-plugin-ts/1.2.25_rollup@2.17.1:
+  /@wessberg/rollup-plugin-ts/1.2.25_rollup@2.17.1+typescript@3.9.5:
     dependencies:
       '@babel/core': 7.10.2
       '@babel/plugin-proposal-async-generator-functions': 7.10.1_@babel+core@7.10.2
@@ -1359,13 +1360,14 @@ packages:
       '@types/babel__core': 7.1.8
       '@wessberg/browserslist-generator': 1.0.36
       '@wessberg/stringutil': 1.0.19
-      '@wessberg/ts-clone-node': 0.3.8
+      '@wessberg/ts-clone-node': 0.3.8_typescript@3.9.5
       browserslist: 4.12.0
       chalk: 4.1.0
       magic-string: 0.25.7
       rollup: 2.17.1
       slash: 3.0.0
       tslib: 2.0.0
+      typescript: 3.9.5
     dev: false
     engines:
       node: '>=8.0.0'
@@ -1380,7 +1382,9 @@ packages:
       node: '>=8.0.0'
     resolution:
       integrity: sha512-9AZHVXWlpN8Cn9k5BC/O0Dzb9E9xfEMXzYrNunwvkUTvuK7xgQPVRZpLo+jWCOZ5r8oBa8NIrHuPEu1hzbb6bg==
-  /@wessberg/ts-clone-node/0.3.8:
+  /@wessberg/ts-clone-node/0.3.8_typescript@3.9.5:
+    dependencies:
+      typescript: 3.9.5
     dev: false
     engines:
       node: '>=8.0.0'
@@ -4739,6 +4743,13 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
+  /typescript/3.9.5:
+    dev: false
+    engines:
+      node: '>=4.2.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-hSAifV3k+i6lEoCJ2k6R2Z/rp/H3+8sdmcn5NrS3/3kE7+RyZXm9aqvxWqjEXHAd8b0pShatpcdMTvEdvAJltQ==
   /ua-parser-js/0.7.21:
     dev: false
     resolution:
@@ -4975,3 +4986,4 @@ specifiers:
   rollup-plugin-filesize: ^9.0.1
   rollup-plugin-terser: ^6.1.0
   semantic-release: ^17.0.8
+  typescript: ^3.9.5
