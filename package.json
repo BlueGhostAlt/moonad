@@ -1,0 +1,12 @@
+{
+    "name": "moonad",
+    "repository": "git@github.com/BlueGhostGH/moonad.git",
+    "author": "BlueGhostGH <engisoftleaderoff@gmail.com>",
+    "license": "MIT",
+    "engines": {
+        "node": ">=12.0.0"
+    },
+    "devDependencies": {},
+    "dependencies": {},
+    "scripts": {}
+}
