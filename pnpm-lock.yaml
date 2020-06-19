@@ -8,7 +8,9 @@ dependencies:
   '@wessberg/rollup-plugin-ts': 1.2.25_rollup@2.17.1+typescript@3.9.5
   eslint: 7.3.0
   eslint-config-prettier: 6.11.0_eslint@7.3.0
+  eslint-config-standard: 14.1.1_d6ae085c5efc80e071908273616ba80a
   eslint-plugin-prettier: 3.1.4_eslint@7.3.0+prettier@2.0.5
+  eslint-plugin-standard: 4.0.1_eslint@7.3.0
   prettier: 2.0.5
   rollup: 2.17.1
   rollup-plugin-filesize: 9.0.1
@@ -2293,6 +2295,19 @@ packages:
       eslint: '>=3.14.1'
     resolution:
       integrity: sha512-oB8cpLWSAjOVFEJhhyMZh6NOEOtBVziaqdDQ86+qhDHFbZXoRTM7pNSvFRfW/W/L/LrQ38C99J5CGuRBBzBsdA==
+  /eslint-config-standard/14.1.1_d6ae085c5efc80e071908273616ba80a:
+    dependencies:
+      eslint: 7.3.0
+      eslint-plugin-standard: 4.0.1_eslint@7.3.0
+    dev: false
+    peerDependencies:
+      eslint: '>=6.2.2'
+      eslint-plugin-import: '>=2.18.0'
+      eslint-plugin-node: '>=9.1.0'
+      eslint-plugin-promise: '>=4.2.1'
+      eslint-plugin-standard: '>=4.0.0'
+    resolution:
+      integrity: sha512-Z9B+VR+JIXRxz21udPTL9HpFMyoMUEeX1G251EQ6e05WD9aPVtVBn09XUmZ259wCMlCDmYDSZG62Hhm+ZTJcUg==
   /eslint-plugin-prettier/3.1.4_eslint@7.3.0+prettier@2.0.5:
     dependencies:
       eslint: 7.3.0
@@ -2306,6 +2321,14 @@ packages:
       prettier: '>=1.13.0'
     resolution:
       integrity: sha512-jZDa8z76klRqo+TdGDTFJSavwbnWK2ZpqGKNZ+VvweMW516pDUMmQ2koXvxEE4JhzNvTv+radye/bWGBmA6jmg==
+  /eslint-plugin-standard/4.0.1_eslint@7.3.0:
+    dependencies:
+      eslint: 7.3.0
+    dev: false
+    peerDependencies:
+      eslint: '>=5.0.0'
+    resolution:
+      integrity: sha512-v/KBnfyaOMPmZc/dmc6ozOdWqekGp7bBGq4jLAecEfPGmfKiWS4sA8sC0LqiV9w5qmXAtXVn4M3p1jSyhY85SQ==
   /eslint-scope/5.1.0:
     dependencies:
       esrecurse: 4.2.1
@@ -5465,7 +5488,9 @@ specifiers:
   '@wessberg/rollup-plugin-ts': ^1.2.25
   eslint: ^7.3.0
   eslint-config-prettier: ^6.11.0
+  eslint-config-standard: ^14.1.1
   eslint-plugin-prettier: ^3.1.4
+  eslint-plugin-standard: ^4.0.1
   prettier: ^2.0.5
   rollup: ^2.17.1
   rollup-plugin-filesize: ^9.0.1
