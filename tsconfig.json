@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "strict": true,
+        "target": "ES5",
         "module": "ESNext",
         "noImplicitAny": true,
         "noImplicitThis": true,
