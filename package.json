@@ -12,6 +12,8 @@
         "@semantic-release/changelog": "^5.0.1",
         "@semantic-release/git": "^9.0.0",
         "@wessberg/rollup-plugin-ts": "^1.2.25",
+        "eslint": "^7.3.0",
+        "prettier": "^2.0.5",
         "rollup": "^2.17.1",
         "rollup-plugin-filesize": "^9.0.1",
         "rollup-plugin-terser": "^6.1.0",
