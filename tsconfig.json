@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "module": "ESNext",
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "esModuleInterop": true,
+        "strictNullChecks": true,
+        "moduleResolution": "Node",
+        "downlevelIteration": true,
+        "strictBindCallApply": true,
+        "allowSyntheticDefaultImports": true,
+        "strictPropertyInitialization": true
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
+}
