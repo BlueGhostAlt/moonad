@@ -9,6 +9,7 @@
     "dependencies": {
         "@rollup/plugin-commonjs": "^13.0.0",
         "@rollup/plugin-node-resolve": "^8.0.1",
+        "@semantic-release/changelog": "^5.0.1",
         "@wessberg/rollup-plugin-ts": "^1.2.25",
         "rollup": "^2.17.1",
         "rollup-plugin-filesize": "^9.0.1",
