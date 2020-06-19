@@ -30,6 +30,9 @@
         "typescript": "^3.9.5"
     },
     "scripts": {
+        "lint-check": "eslint \"**/*.+(js|json|ts)\"",
+        "format-check": "prettier --check \"**/*.+(js|json|ts)\"",
+        "check": "pnpm run format-check && pnpm run lint-check",
         "build": "rollup -c ./rollup.config.ts"
     }
 }
