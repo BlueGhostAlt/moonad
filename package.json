@@ -54,7 +54,7 @@
         "format-check": "prettier --check \"**/*.+(js|json|ts)\"",
         "check": "pnpm run format-check && pnpm run lint-check",
         "build": "rollup -c ./rollup.config.ts",
-        "test": "cross-env NODE_ENV=test mocha -r ts-node/register \"src/**/*.test.ts\" --exit",
+        "test": "cross-env NODE_ENV=test mocha -r ./test/register.js \"src/**/*.test.ts\" --exit",
         "ts-cov": "typescript-coverage-report -s true -t 99"
     }
 }
