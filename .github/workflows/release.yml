@@ -16,19 +16,21 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: "${{ matrix.node-version }}"
-            - name: Install pnpm
-              run: npm i -g pnpm
-            - name: Config pnpm for ci
-              run: pnpm config set verify-store-integrity false
-            - name: Cache node_modules
-              uses: actions/cache@v1
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: 'echo "::set-output name=dir::$(yarn cache dir)"'
+            - uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: ~/.pnpm-store
-                  key: I wonder if anyone sees this
+                  path: "${{ steps.yarn-cache-dir-path.outputs.dir }}"
+                  key: "${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}"
+                  restore-keys: |
+                      ${{ runner.os }}-yarn-
             - name: Install dependencies
-              run: pnpm i
+              if: steps.yarn-cache.outputs.cache-hit != 'true'
+              run: yarn
             - name: Release
               env:
                   GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
                   NPM_TOKEN: "${{ secrets.NPM_TOKEN }}"
-              run: pnpx semantic-release
+              run: npx semantic-release
