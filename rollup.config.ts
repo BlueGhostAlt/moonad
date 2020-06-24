@@ -55,10 +55,10 @@ export default [
                     ]
                 }
             }),
-            !dev && terser(),
-            filesize({
-                showBrotliSize: true
-            })
+            !dev && terser()
+            // filesize({
+            //     showBrotliSize: true
+            // })
         ]
     }
 ]

@@ -61,7 +61,7 @@ typings/
 .next
 
 # distribution files
-packages/*/dist
+dist
 
 # typescript-coverage-report types report
 coverage-ts
