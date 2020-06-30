@@ -10,6 +10,7 @@ So far it only supports Lazy evaluation but more features will come down the roa
 
 ```typescript
 // Creating a lazy instance from an unevaluated value
+import { Lazy } from "@blueghost/moonad"
 
 const lazyVal = Lazy.lazy(() => 3)
 
@@ -18,6 +19,7 @@ console.log(lazyVal.value) // 3
 console.log(lazyVal) // Lazy { _value: { lazy: false, value: 3 } }
 
 // Creating a lazy instance from an evaluated value
+import { Lazy } from "@blueghost/moonad"
 
 const greedyVal = Lazy.pure(3)
 
