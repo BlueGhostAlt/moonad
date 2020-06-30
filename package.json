@@ -1,7 +1,7 @@
 {
     "name": "@blueghost/moonad",
     "version": "0.0.0",
-    "repository": "git@github.com/BlueGhostGH/moonad.git",
+    "repository": "https://github.com/BlueGhostGH/moonad.git",
     "author": "BlueGhostGH <engisoftleaderoff@gmail.com>",
     "license": "MIT",
     "engines": {
@@ -31,6 +31,7 @@
         "@wessberg/rollup-plugin-ts": "^1.2.25",
         "chai": "^4.2.0",
         "cross-env": "^7.0.2",
+        "dotenv": "^8.2.0",
         "eslint": "^7.3.0",
         "eslint-config-prettier": "^6.11.0",
         "eslint-config-standard": "^14.1.1",
@@ -58,6 +59,8 @@
         "build": "rollup -c ./rollup.config.ts",
         "test": "cross-env NODE_ENV=test mocha -r ./test/register.js \"src/**/*.test.ts\" --exit",
         "ts-cov": "typescript-coverage-report -s true -t 99",
-        "test-cov": "nyc yarn test"
-    }
+        "test-cov": "nyc yarn test",
+        "dry-run": "npx --node-arg=\"--require dotenv/config\" semantic-release --dry-run"
+    },
+    "dependencies": {}
 }

@@ -22,4 +22,8 @@ export class Lazy<T> {
 
         return _value.value
     }
+
+    static pure<T>(value: T): Lazy<T> {
+        return new this({ value, lazy: false })
+    }
 }

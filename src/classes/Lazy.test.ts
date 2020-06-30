@@ -10,4 +10,12 @@ describe("Lazy class", () => {
         expect(lazyVal.value).to.deep.equal(value)
         expect(lazyVal.value).to.deep.equal(value)
     })
+
+    it("wraps evaluated values in a lazy instanfce", () => {
+        const value = Math.random()
+
+        const greedyVal = Lazy.pure(value)
+
+        expect(greedyVal.value).to.deep.equal(value)
+    })
 })
