@@ -25,4 +25,16 @@ const greedyVal = Lazy.pure(3)
 
 console.log(lazyVal) // Lazy { _value: { lazy: false, value: 3 } }
 console.log(lazyVal.value) // 3
+
+// Mapping a lazy instance
+import { Lazy } from "@blueghost/moonad"
+
+const lazyVal = Lazy.lazy(() => 3)
+
+const mapper = <T>(x: T): [T, T, T] => [x, x, x]
+
+const mappedVal = lazyVal.map(mapper)
+
+console.log(lazyVal.value) // 3
+console.log(mappedVal.value) // [3, 3, 3]
 ```
