@@ -18,4 +18,16 @@ describe("Lazy class", () => {
 
         expect(greedyVal.value).to.deep.equal(value)
     })
+
+    it("maps a lazy value", () => {
+        const value = Math.random()
+
+        const greedyVal = Lazy.pure(value)
+        const lazyVal = Lazy.lazy(() => value)
+
+        const mapper = (x: number) => x * 2
+
+        expect(greedyVal.map(mapper).value).to.deep.equal(mapper(value))
+        expect(lazyVal.map(mapper).value).to.deep.equal(mapper(value))
+    })
 })
