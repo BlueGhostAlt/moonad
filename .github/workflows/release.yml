@@ -31,6 +31,8 @@ jobs:
                       ${{ runner.os }}-yarn-
             - name: Install dependencies
               run: yarn --prefer-offline
+            - name: Build
+              run: yarn build
             - name: Release
               env:
                   GITHUB_TOKEN: "${{ secrets.GH_TOKEN }}"

@@ -26,4 +26,8 @@ export class Lazy<T> {
     static pure<T>(value: T): Lazy<T> {
         return new this({ value, lazy: false })
     }
+
+    public map<U>(mapper: (value: T) => U): Lazy<U> {
+        return Lazy.lazy(() => mapper(this.value))
+    }
 }
