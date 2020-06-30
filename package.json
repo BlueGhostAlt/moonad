@@ -59,7 +59,8 @@
         "build": "rollup -c ./rollup.config.ts",
         "test": "cross-env NODE_ENV=test mocha -r ./test/register.js \"src/**/*.test.ts\" --exit",
         "ts-cov": "typescript-coverage-report -s true -t 99",
-        "test-cov": "nyc yarn test"
+        "test-cov": "nyc yarn test",
+        "dry-run": "npx --node-arg=\"--require dotenv/config\" semantic-release --dry-run"
     },
     "dependencies": {}
 }
