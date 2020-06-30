@@ -2,7 +2,7 @@ import { Lazy } from "./Lazy"
 import { expect } from "chai"
 
 describe("Lazy class", () => {
-    it("caches values once evaluated", () => {
+    it("it caches values once evaluated", () => {
         const value = Math.random()
 
         const lazyVal = Lazy.lazy(() => value)
@@ -11,7 +11,7 @@ describe("Lazy class", () => {
         expect(lazyVal.value).to.deep.equal(value)
     })
 
-    it("wraps evaluated values in a lazy instanfce", () => {
+    it("it wraps evaluated values in a lazy instanfce", () => {
         const value = Math.random()
 
         const greedyVal = Lazy.pure(value)
@@ -19,7 +19,7 @@ describe("Lazy class", () => {
         expect(greedyVal.value).to.deep.equal(value)
     })
 
-    it("maps a lazy value", () => {
+    it("it maps a lazy value", () => {
         const value = Math.random()
 
         const greedyVal = Lazy.pure(value)
