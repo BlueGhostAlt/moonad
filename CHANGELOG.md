@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/BlueGhostGH/moonad/compare/v1.0.0...v1.1.0) (2020-06-30)
+
+
+### Features
+
+* added a method for mapping a lazy value ([f6a01cd](https://github.com/BlueGhostGH/moonad/commit/f6a01cd42ec1d7bc35060076cc5adba9f8870108))
+
 # 1.0.0 (2020-06-30)
 
 
