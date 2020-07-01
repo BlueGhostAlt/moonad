@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/BlueGhostGH/moonad/compare/v1.1.0...v1.2.0) (2020-07-01)
+
+
+### Features
+
+* added a method for binding a lazy value ([34e11ed](https://github.com/BlueGhostGH/moonad/commit/34e11edd121f63a1fbb3bb77681d508055469d45))
+
 # [1.1.0](https://github.com/BlueGhostGH/moonad/compare/v1.0.0...v1.1.0) (2020-06-30)
 
 
