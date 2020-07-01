@@ -1,6 +1,6 @@
 # Moonad
 
-## Typed Functinal Utility Library for Library
+## Typed Functional Utility Library for Library
 
 ### `moonad` brings to the table well-known patterns and features from strongly typed functional languages to TypeScript
 
