@@ -1,6 +1,6 @@
 {
     "name": "@blueghost/moonad",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "Typed Functional Utility Library for TypeScript",
     "repository": "https://github.com/BlueGhostGH/moonad.git",
     "author": "BlueGhostGH <engisoftleaderoff@gmail.com>",
