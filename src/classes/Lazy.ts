@@ -30,4 +30,8 @@ export class Lazy<T> {
     public map<U>(mapper: (value: T) => U): Lazy<U> {
         return Lazy.lazy(() => mapper(this.value))
     }
+
+    public bind<U>(binder: (value: T) => Lazy<U>): Lazy<U> {
+        return binder(this.value)
+    }
 }
