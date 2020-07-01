@@ -37,4 +37,16 @@ const mappedVal = lazyVal.map(mapper)
 
 console.log(lazyVal.value) // 3
 console.log(mappedVal.value) // [3, 3, 3]
+
+// Binding a lazy instance
+import { Lazy } from "@blueghost/moonad"
+
+const lazyVal = Lazy.lazy(() => 3)
+
+const binder = <T>(x: T): Lazy<[T, T, T]> => Lazy.lazy(() => [x, x, x])
+
+const bindedVal = lazyVal.bind(binder)
+
+console.log(lazyVal.value) // 3
+console.log(bindedVal.value) // [3, 3, 3]
 ```
