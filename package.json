@@ -2,6 +2,11 @@
     "name": "@blueghost/moonad",
     "version": "1.2.0",
     "description": "Typed Functional Utility Library for TypeScript",
+    "keywords": [
+        "lazy",
+        "functional",
+        "typescript"
+    ],
     "repository": "https://github.com/BlueGhostGH/moonad.git",
     "author": "BlueGhostGH <engisoftleaderoff@gmail.com>",
     "license": "MIT",
@@ -61,6 +66,7 @@
         "test": "cross-env NODE_ENV=test mocha -r ./test/register.js \"src/**/*.test.ts\" --exit",
         "ts-cov": "typescript-coverage-report -s true -t 99",
         "test-cov": "nyc yarn test",
+        "test-cov-codeclimate": "nyc --reporter=lcov yarn test",
         "dry-run": "npx --node-arg=\"--require dotenv/config\" semantic-release --dry-run"
     },
     "dependencies": {}
