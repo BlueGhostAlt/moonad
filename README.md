@@ -2,7 +2,7 @@
 
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/BlueGhostGH/moonad/Test/develop?logo=github-actions&logoColor=ffffff&style=for-the-badge)
 
-![Code Climate coverage](https://img.shields.io/codeclimate/coverage/BlueGhostGH/moonad?logo=code-climate&style=for-the-badge) ![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/BlueGhostGH/moonad?logo=code-climate&style=for-the-badge)
+![Code Climate coverage](https://img.shields.io/codeclimate/coverage/BlueGhostGH/moonad?logo=code-climate&style=for-the-badge) ![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/BlueGhostGH/moonad?logo=code-climate&style=for-the-badge) ![Code Climate technical debt](https://img.shields.io/codeclimate/tech-debt/BlueGhostGH/moonad?logo=code-climate&style=for-the-badge)
 
 ## Typed Functional Utility Library for TypeScript
 
