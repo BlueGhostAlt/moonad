@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/BlueGhostGH/moonad/compare/v1.2.0...v1.3.0) (2020-07-05)
+
+
+### Features
+
+* added a method for applying a lazy value ([fa5fb6d](https://github.com/BlueGhostGH/moonad/commit/fa5fb6da9615459f68ff4f6ef4f5baafb3c19b30))
+* added a method for extending a lazy value ([af4872a](https://github.com/BlueGhostGH/moonad/commit/af4872a1228de4cd9498881a276d0377c67cf91a))
+
 # [1.2.0](https://github.com/BlueGhostGH/moonad/compare/v1.1.0...v1.2.0) (2020-07-01)
 
 
