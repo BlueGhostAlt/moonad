@@ -61,7 +61,7 @@
         "test": "cross-env NODE_ENV=test mocha -r ./test/register.js \"src/**/*.test.ts\" --exit",
         "ts-cov": "typescript-coverage-report -s true -t 99",
         "test-cov": "nyc yarn test",
-        "test-cov-codeclimate": "nyc yarn test --reporter=text-lcov",
+        "test-cov-codeclimate": "nyc --reporter=text-lcov yarn test",
         "dry-run": "npx --node-arg=\"--require dotenv/config\" semantic-release --dry-run"
     },
     "dependencies": {}
