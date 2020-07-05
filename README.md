@@ -1,5 +1,7 @@
 # Moonad
 
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/BlueGhostGH/moonad/Test/develop?logo=github-actions&logoColor=ffffff&style=for-the-badge)
+
 ## Typed Functional Utility Library for TypeScript
 
 ### `moonad` brings to the table well-known patterns and features from strongly typed functional languages to TypeScript
