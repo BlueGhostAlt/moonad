@@ -38,4 +38,8 @@ export class Lazy<T> {
     public apply<U>(applier: Lazy<(value: T) => U>): Lazy<U> {
         return Lazy.lazy(() => applier.value(this.value))
     }
+
+    public extend<U>(extender: (value: Lazy<T>) => U): Lazy<U> {
+        return Lazy.lazy(() => extender(this))
+    }
 }
