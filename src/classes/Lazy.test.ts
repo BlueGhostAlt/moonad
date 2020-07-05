@@ -42,4 +42,27 @@ describe("Lazy class", () => {
         expect(greedyVal.bind(binder).value).to.deep.equal(binder(value).value)
         expect(lazyVal.bind(binder).value).to.deep.equal(binder(value).value)
     })
+
+    it("it applies a lazy value", () => {
+        const value = Math.random()
+
+        const greedyVal = Lazy.pure(value)
+        const lazyVal = Lazy.lazy(() => value)
+
+        const lazyApplier = Lazy.lazy(() => (x: number) => x * 2)
+        const greedyApplier = Lazy.pure((x: number) => x * 2)
+
+        expect(greedyVal.apply(lazyApplier).value).to.deep.equal(
+            lazyApplier.value(value)
+        )
+        expect(lazyVal.apply(lazyApplier).value).to.deep.equal(
+            lazyApplier.value(value)
+        )
+        expect(greedyVal.apply(greedyApplier).value).to.deep.equal(
+            greedyApplier.value(value)
+        )
+        expect(lazyVal.apply(greedyApplier).value).to.deep.equal(
+            greedyApplier.value(value)
+        )
+    })
 })
