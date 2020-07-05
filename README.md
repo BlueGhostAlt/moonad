@@ -4,7 +4,7 @@
 
 ![Code Climate coverage](https://img.shields.io/codeclimate/coverage/BlueGhostGH/moonad?logo=code-climate&style=for-the-badge) ![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/BlueGhostGH/moonad?logo=code-climate&style=for-the-badge) ![Code Climate technical debt](https://img.shields.io/codeclimate/tech-debt/BlueGhostGH/moonad?logo=code-climate&style=for-the-badge)
 
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/@blueghost/moonad?logo=npm&style=for-the-badge)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/@blueghost/moonad?logo=npm&style=for-the-badge) ![npm](https://img.shields.io/npm/dw/@blueghost/moonad?color=blue&logo=npm&style=for-the-badge)
 
 ## Typed Functional Utility Library for TypeScript
 
