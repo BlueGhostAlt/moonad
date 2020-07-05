@@ -8,6 +8,22 @@
 
 ### `moonad` brings to the table well-known patterns and features from strongly typed functional languages to TypeScript
 
+### Installation
+
+To install the stable version:
+
+```bash
+npm i @blueghost/moonad
+```
+
+### Using moonad
+
+To use moonad simply use the following import syntax:
+
+```ts
+import { Lazy } from "@blueghost/moonad"
+```
+
 #### Features
 
 You can find the automatically generated changelog [here](CHANGELOG.md)
