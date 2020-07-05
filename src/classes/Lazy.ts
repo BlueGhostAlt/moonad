@@ -34,4 +34,8 @@ export class Lazy<T> {
     public bind<U>(binder: (value: T) => Lazy<U>): Lazy<U> {
         return binder(this.value)
     }
+
+    public apply<U>(applier: Lazy<(value: T) => U>): Lazy<U> {
+        return Lazy.lazy(() => applier.value(this.value))
+    }
 }
