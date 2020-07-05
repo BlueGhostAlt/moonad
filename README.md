@@ -10,6 +10,8 @@
 
 #### Features
 
+You can find the automatically generated changelog [here](CHANGELOG.md)
+
 So far it only supports Lazy evaluation but more features will come down the road:
 
 ```typescript
