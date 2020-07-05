@@ -33,13 +33,12 @@ jobs:
               run: yarn --prefer-offline
             - name: Test project
               run: yarn test
-            - name: Generate project coverage
-              run: yarn test-cov-coveralls
-            - name: Upload project coverage to Coveralls
-              uses: coverallsapp/github-action@v1.1.1
+            - name: Upload project coverage to Code Climate
+              uses: paambaati/codeclimate-action@v2.6.0
+              env:
+                  CC_TEST_REPORTER_ID: "${{secrets.CC_TEST_REPORTER_ID}}"
               with:
-                  github-token: "${{ secrets.GH_TOKEN }}"
-                  flag-name: Integration
+                  coverageCommand: yarn test-cov-codeclimate
             - name: Build project
               run: yarn build
             - name: Check for linting and formatting of the project
