@@ -65,4 +65,18 @@ describe("Lazy class", () => {
             greedyApplier.value(value)
         )
     })
+
+    it("it extends a lazy value", () => {
+        const value = Math.random()
+
+        const greedyVal = Lazy.pure(value)
+        const lazyVal = Lazy.lazy(() => value)
+
+        const extender = (x: Lazy<number>) => x.value * 2
+
+        expect(greedyVal.extend(extender).value).to.deep.equal(
+            extender(greedyVal)
+        )
+        expect(lazyVal.extend(extender).value).to.deep.equal(extender(lazyVal))
+    })
 })
