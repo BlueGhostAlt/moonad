@@ -8,6 +8,18 @@
 
 ### `moonad` brings to the table well-known patterns and features from strongly typed functional languages to TypeScript
 
+```typescript
+import { Lazy } from "./Lazy"
+
+const lazyApplier = Lazy.lazy(() => (x: number) => x * 2)
+
+const lazyVal = Lazy.lazy(() => 3)
+    .apply(lazyApplier)
+    .map(x => x + 1)
+
+console.log(lazyVal.value) // 7
+```
+
 ### Installation
 
 To install the stable version:
