@@ -41,3 +41,7 @@ import { Lazy } from "@blueghost/moonad"
 You can find the automatically generated changelog [here](CHANGELOG.md)
 
 The documentation in markdown format can be found [here](./docs/index.md)
+
+#### Licence
+
+`moonad` uses the [MIT](LICENSE) licence
