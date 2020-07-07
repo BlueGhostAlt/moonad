@@ -54,4 +54,8 @@ export class Lazy<T> {
     public toString(): string {
         return `${this.value}`
     }
+
+    public toJSON(): string {
+        return `${JSON.stringify({ lazy: false, value: this.value })}`
+    }
 }
