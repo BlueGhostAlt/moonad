@@ -36,7 +36,6 @@ export type map<T, U> = (mapper: (value: T) => U): Lazy<U>
 ```
 
 ```typescript
-// Mapping a lazy instance
 import { Lazy } from "@blueghost/moonad"
 
 const lazyVal = Lazy.lazy(() => 3)
@@ -56,7 +55,6 @@ export type bind<T, U> = (binder: (value: T) => Lazy<U>): Lazy<U>
 ```
 
 ```typescript
-// Binding a lazy instance
 import { Lazy } from "@blueghost/moonad"
 
 const lazyVal = Lazy.lazy(() => 3)
