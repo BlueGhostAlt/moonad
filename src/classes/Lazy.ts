@@ -163,7 +163,7 @@ export class Lazy<T> {
         return `${this.value}`
     }
 
-    public toJSON(): string {
-        return `${JSON.stringify({ lazy: false, value: this.value })}`
+    public toJSON(): LazyValue<T> {
+        return { lazy: false, value: this.value }
     }
 }
