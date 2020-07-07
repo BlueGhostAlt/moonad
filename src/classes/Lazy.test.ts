@@ -11,7 +11,7 @@ describe("Lazy class", () => {
         expect(lazyVal.value).to.deep.equal(value)
     })
 
-    it("it wraps evaluated values in a lazy instanfce", () => {
+    it("it wraps already evaluated values in a lazy instanfce", () => {
         const value = Math.random()
 
         const greedyVal = Lazy.pure(value)
@@ -43,6 +43,20 @@ describe("Lazy class", () => {
         expect(lazyVal.bind(binder).value).to.deep.equal(binder(value).value)
     })
 
+    it("it extends a lazy value", () => {
+        const value = Math.random()
+
+        const greedyVal = Lazy.pure(value)
+        const lazyVal = Lazy.lazy(() => value)
+
+        const extender = (x: Lazy<number>) => x.value * 2
+
+        expect(greedyVal.extend(extender).value).to.deep.equal(
+            extender(greedyVal)
+        )
+        expect(lazyVal.extend(extender).value).to.deep.equal(extender(lazyVal))
+    })
+
     it("it applies a lazy value", () => {
         const value = Math.random()
 
@@ -64,19 +78,5 @@ describe("Lazy class", () => {
         expect(lazyVal.apply(greedyApplier).value).to.deep.equal(
             greedyApplier.value(value)
         )
-    })
-
-    it("it extends a lazy value", () => {
-        const value = Math.random()
-
-        const greedyVal = Lazy.pure(value)
-        const lazyVal = Lazy.lazy(() => value)
-
-        const extender = (x: Lazy<number>) => x.value * 2
-
-        expect(greedyVal.extend(extender).value).to.deep.equal(
-            extender(greedyVal)
-        )
-        expect(lazyVal.extend(extender).value).to.deep.equal(extender(lazyVal))
     })
 })
