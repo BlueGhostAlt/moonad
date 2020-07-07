@@ -1,3 +1,13 @@
+# [1.4.0](https://github.com/BlueGhostGH/moonad/compare/v1.3.0...v1.4.0) (2020-07-07)
+
+
+### Features
+
+* added a method for flattening a lazy instance ([8be1fc6](https://github.com/BlueGhostGH/moonad/commit/8be1fc605b2504c39181b8662b484dca8d7b4a43))
+* added a method for joining a double nested lazy instance ([6eb028a](https://github.com/BlueGhostGH/moonad/commit/6eb028a291363bdc5738e062d8035baa12656a49))
+* added a method for using lazy instances in string interpolations ([65d151a](https://github.com/BlueGhostGH/moonad/commit/65d151af379c7c53d621c371cd7332fbbb0cd03a))
+* added a method for using lazy instances in stringified JSON objects ([5744168](https://github.com/BlueGhostGH/moonad/commit/574416816e8beb65a8770c7ecda583a4dff19382))
+
 # [1.3.0](https://github.com/BlueGhostGH/moonad/compare/v1.2.0...v1.3.0) (2020-07-05)
 
 
