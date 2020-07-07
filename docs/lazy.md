@@ -8,9 +8,9 @@ To use the lazy wrapper for values, simply import the Lazy class exported from t
 import { Lazy } from "@blueghost/moonad"
 ```
 
-### Wrapping a value in a lazy instance
+### Factories
 
-There are two ways of achieving this:
+#### lazy
 
 ```typescript
 // Creating a lazy instance from an unevaluated value
@@ -19,7 +19,11 @@ const lazyVal = Lazy.lazy(() => 3)
 console.log(lazyVal) // Lazy { _value: { value: [Function (anonymous)], lazy: true } }
 console.log(lazyVal.value) // 3
 console.log(lazyVal) // Lazy { _value: { lazy: false, value: 3 } }
+```
 
+#### pure
+
+```typescript
 // Creating a lazy instance from an evaluated value
 const greedyVal = Lazy.pure(3)
 
@@ -27,9 +31,9 @@ console.log(lazyVal) // Lazy { _value: { lazy: false, value: 3 } }
 console.log(lazyVal.value) // 3
 ```
 
-### Operations on lazy values
+### Methods
 
-#### Map
+#### map
 
 ```typescript
 export type map<T, U> = (mapper: (value: T) => U): Lazy<U>
@@ -48,7 +52,7 @@ console.log(lazyVal.value) // 3
 console.log(mappedVal.value) // [3, 3, 3]
 ```
 
-#### Bind
+#### bind
 
 ```typescript
 export type bind<T, U> = (binder: (value: T) => Lazy<U>): Lazy<U>
