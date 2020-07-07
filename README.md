@@ -4,6 +4,8 @@
 
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@blueghost/moonad?logo=npm&style=for-the-badge) ![npm](https://img.shields.io/npm/dw/@blueghost/moonad?color=blue&logo=npm&style=for-the-badge) ![npm](https://img.shields.io/npm/v/@blueghost/moonad?color=black&label=npm%20version&logo=npm&style=for-the-badge) ![npm type definitions](https://img.shields.io/npm/types/@blueghost/moonad?logo=typescript&style=for-the-badge)
 
+![pkgreview.dev Package Ratings](https://img.shields.io/pkgreview/rating/npm/@blueghost/moonad?color=orange&style=for-the-badge)
+
 ## Typed Functional Utility Library for TypeScript
 
 ### `moonad` brings to the table well-known patterns and features from strongly typed functional languages to TypeScript
