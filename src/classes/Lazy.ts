@@ -90,10 +90,10 @@ export class Lazy<T> {
      * console.log(lazyValue.bind(binder)) // 6
      *
      * @param binder A bind function to bind the wrapped value with
-     * @returns A lazy instance of the binded value
+     * @returns A lazy instance of the unevaluated binded value
      */
     public bind<U>(binder: (value: T) => Lazy<U>): Lazy<U> {
-        return binder(this.value)
+        return Lazy.lazy(() => binder(this.value).value)
     }
 
     /**
