@@ -133,8 +133,8 @@ export class Lazy<T> {
      *
      * @returns Returns the inner lazy instance of a nested lazy instance
      */
-    public flat(): T extends Lazy<infer R> ? R : never {
-        return this.value as T extends Lazy<infer R> ? R : never
+    public flat(): T extends Lazy<infer _> ? T : never {
+        return this.value as T extends Lazy<infer _> ? T : never
     }
 
     /**
