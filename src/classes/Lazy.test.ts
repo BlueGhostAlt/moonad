@@ -1,5 +1,6 @@
-import { Lazy } from "./Lazy"
 import { expect } from "chai"
+
+import { Lazy } from "./Lazy"
 
 describe("Lazy class", () => {
     it("it caches values once evaluated", () => {
