@@ -50,4 +50,8 @@ export class Lazy<T> {
     static join<T>(value: Lazy<Lazy<T>>): Lazy<T> {
         return value.value
     }
+
+    public toString(): string {
+        return `${this.value}`
+    }
 }
