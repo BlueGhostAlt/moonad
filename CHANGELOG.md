@@ -1,3 +1,11 @@
+## [1.4.1](https://github.com/BlueGhostGH/moonad/compare/v1.4.0...v1.4.1) (2020-07-07)
+
+
+### Bug Fixes
+
+* fixed toJSON method for lazy classes returning a stringified object ([74cc432](https://github.com/BlueGhostGH/moonad/commit/74cc4325f99d7540d1514f377013aaada0eb2638))
+* fixed type definition of method for flattening lazy instances ([f88529a](https://github.com/BlueGhostGH/moonad/commit/f88529a8644a24d8267d9ec3448c0cd88165925f))
+
 # [1.4.0](https://github.com/BlueGhostGH/moonad/compare/v1.3.0...v1.4.0) (2020-07-07)
 
 
