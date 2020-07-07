@@ -44,6 +44,10 @@ You can find the automatically generated changelog [here](CHANGELOG.md)
 
 The documentation in markdown format can be found [here](./docs/index.md)
 
+#### Contributing
+
+To contribute, check the contribution guide [here](CONTRIBUTING.md)
+
 #### Licence
 
 `moonad` uses the [MIT](LICENSE) licence
