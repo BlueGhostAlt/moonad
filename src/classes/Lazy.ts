@@ -131,6 +131,12 @@ export class Lazy<T> {
     /**
      * Flattens the lazy instance
      *
+     * @example
+     * const lazyValue: Lazy<Lazy<number>> = Lazy.lazy(() => Lazy.pure(3))
+     * const flattenedLazyValue: Lazy<number> = lazyValue.flat()
+     *
+     * console.log(flattenedLazyValue.value) // 3
+     *
      * @returns Returns the inner lazy instance of a nested lazy instance
      */
     public flat(): T extends Lazy<infer _> ? T : never {
