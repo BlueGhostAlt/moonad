@@ -102,4 +102,22 @@ describe("Lazy class", () => {
         expect(Lazy.join(lazyGreedyVal).value).to.deep.equal(value)
         expect(Lazy.join(lazyLazyVal).value).to.deep.equal(value)
     })
+
+    it("it can interpolate in strings", () => {
+        const value = Math.random()
+
+        const lazyVal = Lazy.lazy(() => value)
+
+        expect(`${lazyVal}`).to.deep.equal(String(value))
+    })
+
+    it("it can stringify in JSON", () => {
+        const value = Math.random()
+
+        const lazyVal = Lazy.lazy(() => value)
+
+        expect(JSON.stringify(lazyVal)).to.deep.equal(
+            JSON.stringify({ lazy: false, value: lazyVal.value })
+        )
+    })
 })
