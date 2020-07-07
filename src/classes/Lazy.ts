@@ -11,6 +11,10 @@ export class Lazy<T> {
         return new this({ value, lazy: true })
     }
 
+    static pure<T>(value: T): Lazy<T> {
+        return new this({ value, lazy: false })
+    }
+
     public get value(): T {
         const { _value } = this
 
@@ -23,10 +27,6 @@ export class Lazy<T> {
         return _value.value
     }
 
-    static pure<T>(value: T): Lazy<T> {
-        return new this({ value, lazy: false })
-    }
-
     public map<U>(mapper: (value: T) => U): Lazy<U> {
         return Lazy.lazy(() => mapper(this.value))
     }
@@ -35,11 +35,27 @@ export class Lazy<T> {
         return binder(this.value)
     }
 
+    public extend<U>(extender: (value: Lazy<T>) => U): Lazy<U> {
+        return Lazy.lazy(() => extender(this))
+    }
+
     public apply<U>(applier: Lazy<(value: T) => U>): Lazy<U> {
         return Lazy.lazy(() => applier.value(this.value))
     }
 
-    public extend<U>(extender: (value: Lazy<T>) => U): Lazy<U> {
-        return Lazy.lazy(() => extender(this))
+    public flat(): T extends Lazy<infer R> ? R : never {
+        return this.value as T extends Lazy<infer R> ? R : never
+    }
+
+    static join<T>(value: Lazy<Lazy<T>>): Lazy<T> {
+        return value.value
+    }
+
+    public toString(): string {
+        return `${this.value}`
+    }
+
+    public toJSON(): string {
+        return `${JSON.stringify({ lazy: false, value: this.value })}`
     }
 }
