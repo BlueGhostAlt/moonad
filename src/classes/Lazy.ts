@@ -9,6 +9,9 @@ export class Lazy<T> {
     /**
      * Creates a lazy instance from either an evaluated or an unevaluated value and a boolean value
      *
+     * @example
+     * const lazyValue: Lazy<number> = new Lazy({ lazy: false, value: 3 })
+     *
      * @param value A pre-instantiated lazy value along with the adequate flag for state of evaluation
      */
     constructor(value: LazyValue<T>) {
@@ -17,6 +20,9 @@ export class Lazy<T> {
 
     /**
      * Creates a lazy instance from an unevaluated value
+     *
+     * @example
+     * const lazyValue: Lazy<number> = Lazy.lazy(() => 3)
      *
      * @param value A function that returns a value
      * @returns A lazy instance of the to-be-evaluated value
@@ -28,6 +34,9 @@ export class Lazy<T> {
     /**
      * Creates a lazy instance from an evaluated value
      *
+     * @example
+     * const lazyValue: Lazy<number> = Lazy.pure(3)
+     *
      * @param value An already evaluated value
      * @returns A lazy instance of the evaluated value
      */
@@ -37,6 +46,11 @@ export class Lazy<T> {
 
     /**
      * Returns the inner value of the lazy instance
+     *
+     * @example
+     * const lazyValue: Lazy<number> = Lazy.lazy(() => 3)
+     *
+     * console.log(lazyValue.value) // 3
      */
     public get value(): T {
         const { _value } = this
@@ -53,6 +67,12 @@ export class Lazy<T> {
     /**
      * Maps the inner value with a mapper
      *
+     * @example
+     * const lazyValue: Lazy<number> = Lazy.lazy(() => 3)
+     * const mapper = (x: number): number => x * 2
+     *
+     * console.log(lazyValue.map(mapper)) // 6
+     *
      * @param mapper A map function to map the wrapped value with
      * @returns A lazy instance of the unevaluated mapped value
      */
@@ -62,6 +82,12 @@ export class Lazy<T> {
 
     /**
      * Binds the inner value with a binder
+     *
+     * @example
+     * const lazyValue: Lazy<number> = Lazy.lazy(() => 3)
+     * const binder = (x: number): Lazy<number> => Lazy.lazy(() => x * 2)
+     *
+     * console.log(lazyValue.bind(binder)) // 6
      *
      * @param binder A bind function to bind the wrapped value with
      * @returns A lazy instance of the binded value
@@ -73,6 +99,12 @@ export class Lazy<T> {
     /**
      * Extends the inner value with an extender
      *
+     * @example
+     * const lazyValue: Lazy<number> = Lazy.lazy(() => 3)
+     * const extender = (x: Lazy<number>): number => x.value * 2
+     *
+     * console.log(lazyValue.extend(extender)) // 6
+     *
      * @param extender An extend function to extend the wrapped value with
      * @returns A lazy instance of the unevaluated extended value
      */
@@ -82,6 +114,12 @@ export class Lazy<T> {
 
     /**
      * Applies the inner value with an applier
+     *
+     * @example
+     * const lazyValue: Lazy<number> = Lazy.lazy(() => 3)
+     * const applier = Lazy.lazy(() => (x: number): number => x * 2)
+     *
+     * console.log(lazyValue.apply(applier)) // 6
      *
      * @param applier An apply function to apply the wrapped value with
      * @returns A lazy instance of the unevaluated applied value
@@ -101,6 +139,12 @@ export class Lazy<T> {
 
     /**
      * Joins a lazy instance
+     *
+     * @example
+     * const lazyValue: Lazy<Lazy<number>> = Lazy.lazy(() => Lazy.pure(3))
+     *
+     * console.log(Lazy.join(lazyValue)) // Lazy { _value: { lazy: false, value: 3 } }
+     * console.log(Lazy.join(lazyValue).value) // 3
      *
      * @param value A double nested lazy instance
      * @returns The inner lazy instance
