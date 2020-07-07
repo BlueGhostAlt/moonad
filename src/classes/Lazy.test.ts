@@ -81,6 +81,14 @@ describe("Lazy class", () => {
         )
     })
 
+    it("it flattens a lazy value", () => {
+        const value = Math.random()
+
+        const greedyGreedyValue = Lazy.pure(Lazy.pure(value))
+
+        expect(greedyGreedyValue.flat().value).to.deep.equal(value)
+    })
+
     it("it joins a lazy value", () => {
         const value = Math.random()
 
