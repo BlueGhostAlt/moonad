@@ -43,6 +43,10 @@ export class Lazy<T> {
         return Lazy.lazy(() => applier.value(this.value))
     }
 
+    public flat(): T extends Lazy<infer R> ? R : never {
+        return this.value as T extends Lazy<infer R> ? R : never
+    }
+
     static join<T>(value: Lazy<Lazy<T>>): Lazy<T> {
         return value.value
     }
