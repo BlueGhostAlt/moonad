@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/BlueGhostGH/moonad/compare/v1.4.1...v1.4.2) (2020-07-07)
+
+
+### Bug Fixes
+
+* increased laziness in method for binding lazy instances ([dfa10b6](https://github.com/BlueGhostGH/moonad/commit/dfa10b633ca7b207a8ecff707062ebfbf8c7a234))
+
 ## [1.4.1](https://github.com/BlueGhostGH/moonad/compare/v1.4.0...v1.4.1) (2020-07-07)
 
 
