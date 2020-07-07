@@ -13,7 +13,6 @@ import { Lazy } from "@blueghost/moonad"
 #### lazy
 
 ```typescript
-// Creating a lazy instance from an unevaluated value
 const lazyVal = Lazy.lazy(() => 3)
 
 console.log(lazyVal) // Lazy { _value: { value: [Function (anonymous)], lazy: true } }
@@ -24,7 +23,6 @@ console.log(lazyVal) // Lazy { _value: { lazy: false, value: 3 } }
 #### pure
 
 ```typescript
-// Creating a lazy instance from an evaluated value
 const greedyVal = Lazy.pure(3)
 
 console.log(lazyVal) // Lazy { _value: { lazy: false, value: 3 } }
