@@ -42,4 +42,8 @@ export class Lazy<T> {
     public apply<U>(applier: Lazy<(value: T) => U>): Lazy<U> {
         return Lazy.lazy(() => applier.value(this.value))
     }
+
+    static join<T>(value: Lazy<Lazy<T>>): Lazy<T> {
+        return value.value
+    }
 }
