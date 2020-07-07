@@ -8,8 +8,6 @@ To use the lazy wrapper for values, simply import the Lazy class exported from t
 import { Lazy } from "@blueghost/moonad"
 ```
 
-## Examples
-
 ### Wrapping a value in a lazy instance
 
 There are two ways of achieving this:
@@ -31,6 +29,12 @@ console.log(lazyVal.value) // 3
 
 ### Operations on lazy values
 
+#### Map
+
+```typescript
+export type map<T, U> = (mapper: (value: T) => U): Lazy<U>
+```
+
 ```typescript
 // Mapping a lazy instance
 import { Lazy } from "@blueghost/moonad"
@@ -43,7 +47,15 @@ const mappedVal = lazyVal.map(mapper)
 
 console.log(lazyVal.value) // 3
 console.log(mappedVal.value) // [3, 3, 3]
+```
 
+#### Bind
+
+```typescript
+export type bind<T, U> = (binder: (value: T) => Lazy<U>): Lazy<U>
+```
+
+```typescript
 // Binding a lazy instance
 import { Lazy } from "@blueghost/moonad"
 
