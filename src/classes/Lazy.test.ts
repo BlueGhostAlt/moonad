@@ -80,4 +80,18 @@ describe("Lazy class", () => {
             greedyApplier.value(value)
         )
     })
+
+    it("it joins a lazy value", () => {
+        const value = Math.random()
+
+        const greedyGreedyVal = Lazy.pure(Lazy.pure(value))
+        const greedyLazyVal = Lazy.pure(Lazy.lazy(() => value))
+        const lazyGreedyVal = Lazy.lazy(() => Lazy.pure(value))
+        const lazyLazyVal = Lazy.lazy(() => Lazy.lazy(() => value))
+
+        expect(Lazy.join(greedyGreedyVal).value).to.deep.equal(value)
+        expect(Lazy.join(greedyLazyVal).value).to.deep.equal(value)
+        expect(Lazy.join(lazyGreedyVal).value).to.deep.equal(value)
+        expect(Lazy.join(lazyLazyVal).value).to.deep.equal(value)
+    })
 })
