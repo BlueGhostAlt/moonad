@@ -84,4 +84,14 @@ export class LazyList<T> {
     public cons(x: Lazy<T>): LazyList<T> {
         return LazyList.fromElement(Lazy.pure({ head: x, tail: this._value }))
     }
+
+    public snoc(x: Lazy<T>): LazyList<T> {
+        if (this.tail) {
+            return this.tail.snoc(x).cons(this.head!)
+        } else {
+            return LazyList.fromElement(
+                Lazy.pure({ head: x, tail: Lazy.pure(null) })
+            )
+        }
+    }
 }
