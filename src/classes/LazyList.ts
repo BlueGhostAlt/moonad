@@ -33,6 +33,23 @@ export class LazyList<T> {
         return new this(toElem(xs))
     }
 
+    static fromArrayOfLazy<T>(xs: Lazy<T>[]): LazyList<T> {
+        const toElem = (xs: Lazy<T>[]): LazyListNode<T> => {
+            const [y, ...ys] = xs
+
+            return Lazy.lazy(() => {
+                if (!xs.length) return null
+
+                return {
+                    head: y,
+                    tail: toElem(ys)
+                }
+            })
+        }
+
+        return new this(toElem(xs))
+    }
+
     public get head(): Lazy<T> | null {
         if (!this._value.value) return null
 
