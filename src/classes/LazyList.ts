@@ -8,12 +8,12 @@ type LazyListNode<T> = Lazy<{
 export class LazyList<T> {
     private _value: LazyListNode<T>
 
-    private static fromElement<T>(value: LazyListNode<T>): LazyList<T> {
-        return new this(value)
-    }
-
     constructor(value: LazyListNode<T>) {
         this._value = value
+    }
+
+    private static fromElement<T>(value: LazyListNode<T>): LazyList<T> {
+        return new this(value)
     }
 
     static fromArray<T>(xs: T[]): LazyList<T> {
@@ -67,7 +67,7 @@ export class LazyList<T> {
             head: this.head,
             tail: this.tail,
 
-            next() {
+            next(): { done: true } | { done: false; value: Lazy<T> | null } {
                 if (!this.tail) {
                     return { done: true }
                 }
@@ -79,5 +79,9 @@ export class LazyList<T> {
                 return { done: false, value: x }
             }
         }
+    }
+
+    public cons(x: Lazy<T>): LazyList<T> {
+        return LazyList.fromElement(Lazy.pure({ head: x, tail: this._value }))
     }
 }
