@@ -61,4 +61,23 @@ export class LazyList<T> {
 
         return LazyList.fromElement(this._value.value.tail)
     }
+
+    [Symbol.iterator]() {
+        return {
+            head: this.head,
+            tail: this.tail,
+
+            next() {
+                if (!this.tail) {
+                    return { done: true }
+                }
+
+                const x = this.head
+                this.head = this.tail.head
+                this.tail = this.tail.tail
+
+                return { done: false, value: x }
+            }
+        }
+    }
 }
