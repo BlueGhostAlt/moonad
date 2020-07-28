@@ -55,6 +55,7 @@
         "semantic-release": "^17.0.8",
         "source-map-support": "^0.5.19",
         "ts-node": "^8.10.2",
+        "ts-node-dev": "^1.0.0-pre.52",
         "typescript": "^3.9.5",
         "typescript-coverage-report": "^0.1.3"
     },
@@ -62,6 +63,7 @@
         "lint-check": "eslint \"**/*.+(js|json|ts)\"",
         "format-check": "prettier --check \"**/*.+(js|json|ts)\"",
         "check": "yarn format-check && yarn lint-check",
+        "dev": "tsnd --project sandbox/tsconfig.json --rs sandbox/index.ts",
         "build": "rollup -c ./rollup.config.ts",
         "test": "cross-env NODE_ENV=test mocha -r ./test/register.js \"src/**/*.test.ts\" --exit",
         "ts-cov": "typescript-coverage-report -s true -t 99",
