@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/BlueGhostGH/moonad/compare/v1.4.2...v1.5.0) (2020-07-28)
+
+
+### Features
+
+* added a class for storing lazily evaluated linked lists ([64184f5](https://github.com/BlueGhostGH/moonad/commit/64184f5f14a76e6337024b30f89834cc2460891d))
+* added a fromarray method for transforming arrays into lazylists ([5c1ba34](https://github.com/BlueGhostGH/moonad/commit/5c1ba34690f2d197f8d6965f65eb268609103cb2))
+* added a fromarrayoflazy method for transforming arrays of lazy values into lazylists ([edb88e0](https://github.com/BlueGhostGH/moonad/commit/edb88e022a04936571b52ecb8bdf66876c024485))
+* added a method for appending an element to the end of a lazylist ([de40fda](https://github.com/BlueGhostGH/moonad/commit/de40fda123ffd758161c912c95580eeadce3753d))
+* added a method for appending an element to the start of a lazylist ([a65698b](https://github.com/BlueGhostGH/moonad/commit/a65698b5311247b8e11469e186c4f8eb307a3de3))
+* added a symbol iterator to lazy lists to allow iterating over ([462e755](https://github.com/BlueGhostGH/moonad/commit/462e755e814de0fb565de68cfe3b055d8c27946e))
+
 ## [1.4.2](https://github.com/BlueGhostGH/moonad/compare/v1.4.1...v1.4.2) (2020-07-07)
 
 
