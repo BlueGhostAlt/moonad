@@ -15,8 +15,8 @@ export class LazyList<T> {
      * Creates a lazy instance from either an evaluated or an unevaluated value and a boolean value
      *
      * @example
-     * const lazyList: LL<number> = new LL(
-     *    L.pure({ head: Lazy.pure(3), tail: Lazy.pure(null) })
+     * const lazyList: LazyList<number> = new LazyList(
+     *     Lazy.pure({ head: Lazy.pure(3), tail: Lazy.pure(null) })
      * )
      *
      * @param value A pre-instantiated lazy linked list with all elelements wrapped in a lazy instance
@@ -63,12 +63,38 @@ export class LazyList<T> {
         return new this(toElem(xs))
     }
 
+    /**
+     * Returns the first value of the lazy linked list
+     *
+     * @example
+     * const lazyList: LazyList<number> = new LinkedList(
+     *     Lazy.pure({ head: Lazy.pure(3), tail: Lazy.pure(null) })
+     * )
+     *
+     * console.log(lazyList.head) // Lazy { _value: { lazy: false, value: 3 } }
+     * console.log(lazyList.head.value) // 3
+     */
     public get head(): Lazy<T> | null {
         if (!this._value.value) return null
 
         return this._value.value.head
     }
 
+    /**
+     * Returns the lazy linked list without its head, also known as its tail
+     *
+     * @example
+     * const lazyList: LazyList<number> = new LazyList(
+     *     Lazy.pure({
+     *         head: Lazy.pure(3),
+     *         tail: Lazy.pure({ head: Lazy.pure(4), tail: Lazy.pure(null) })
+     *     })
+     * )
+     *
+     * console.log(lazyList.tail) // LazyList { _value: Lazy { _value: { value: [Object], lazy: false } } }
+     * console.log(lazyList.tail.head) // Lazy { _value: { value: 4, lazy: false } }
+     * console.log(lazyList.tail.head.value) // 4
+     */
     public get tail(): LazyList<T> | null {
         if (!this._value.value) return null
 
