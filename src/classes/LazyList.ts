@@ -29,6 +29,17 @@ export class LazyList<T> {
         return new this(value)
     }
 
+    /**
+     * Creates a lazy linked list instance from an array of values not-yet wrapped in a lazy instance
+     *
+     * @example
+     * const lazyList: LazyList<number> = LazyList.fromArray([3, 3, 3])
+     *
+     * console.log([...lazyList].map(e => e.val)) // [3, 3, 3]
+     *
+     * @param xs A regular array of values of the same type
+     * @returns A lazy linked list variant of the provided array
+     */
     static fromArray<T>(xs: T[]): LazyList<T> {
         const toElem = (xs: T[]): LazyListNode<T> => {
             const [y, ...ys] = xs
@@ -46,6 +57,18 @@ export class LazyList<T> {
         return new this(toElem(xs))
     }
 
+    /**
+     * Creates a lazy linked list instance from an array of values wrapped in a lazy instance
+     *
+     * @example
+     * const three = Lazy.pure(3)
+     * const lazyList: LazyList<number> = LazyList.fromArray([three, three, three])
+     *
+     * console.log([...lazyList].map(e => e.val)) // [3, 3, 3]
+     *
+     * @param xs A regular array of lazy values of the same type
+     * @returns A lazy linked list variant of the provided array
+     */
     static fromArrayOfLazy<T>(xs: Lazy<T>[]): LazyList<T> {
         const toElem = (xs: Lazy<T>[]): LazyListNode<T> => {
             const [y, ...ys] = xs
