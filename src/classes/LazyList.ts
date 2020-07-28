@@ -5,9 +5,22 @@ type LazyListNode<T> = Lazy<{
     tail: LazyListNode<T>
 } | null>
 
+/**
+ * Lazily evaluated linked lists that handles operating on lazy values and allows infinite data structures
+ */
 export class LazyList<T> {
     private _value: LazyListNode<T>
 
+    /**
+     * Creates a lazy instance from either an evaluated or an unevaluated value and a boolean value
+     *
+     * @example
+     * const lazyList: LL<number> = new LL(
+     *    L.pure({ head: Lazy.pure(3), tail: Lazy.pure(null) })
+     * )
+     *
+     * @param value A pre-instantiated lazy linked list with all elelements wrapped in a lazy instance
+     */
     constructor(value: LazyListNode<T>) {
         this._value = value
     }
