@@ -8,6 +8,18 @@ To use the lazy wrapper for values, simply import the Lazy class exported from t
 import { Lazy } from "@blueghost/moonad"
 ```
 
+### Properties
+
+#### value
+
+Returns the inner value of the lazy instance
+
+```typescript
+const lazyVal = Lazy.lazy(() => 3)
+
+console.log(lazyVal.value) // 3
+```
+
 ### Factories
 
 #### lazy
