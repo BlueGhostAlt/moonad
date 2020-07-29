@@ -24,6 +24,8 @@ console.log(lazyVal.value) // 3
 
 #### lazy
 
+Creates a lazy instance from an unevaluated value
+
 ```typescript
 const lazyVal = Lazy.lazy(() => 3)
 
@@ -33,6 +35,8 @@ console.log(lazyVal) // Lazy { _value: { lazy: false, value: 3 } }
 ```
 
 #### pure
+
+Creates a lazy instance from an evaluated value
 
 ```typescript
 const greedyVal = Lazy.pure(3)
