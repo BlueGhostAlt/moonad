@@ -25,4 +25,30 @@ describe("Lazy linked list class", () => {
             array.map(e => e?.value)
         )
     })
+
+    it("it appends elements to the beginning of a lazy linked list", () => {
+        const one = Lazy.pure(1)
+        const lazyList = LazyList.fromArray([2, 3, 4, 5])
+
+        expect([...lazyList.cons(one)].map(e => e?.value)).to.deep.equal([
+            1,
+            2,
+            3,
+            4,
+            5
+        ])
+    })
+
+    it("it appends elements to the end of a lazy linked list", () => {
+        const five = Lazy.pure(5)
+        const lazyList = LazyList.fromArray([1, 2, 3, 4])
+
+        expect([...lazyList.snoc(five)].map(e => e?.value)).to.deep.equal([
+            1,
+            2,
+            3,
+            4,
+            5
+        ])
+    })
 })
