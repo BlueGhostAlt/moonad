@@ -88,3 +88,49 @@ const bindedVal = lazyVal.bind(binder)
 console.log(lazyVal.value) // 3
 console.log(bindedVal.value) // [3, 3, 3]
 ```
+
+#### extend
+
+Extends the inner value with an extender
+
+```typescript
+export type extend<T, U> = (extender: (value: Lazy<T>) => U): Lazy<U>
+```
+
+```typescript
+import { Lazy } from "@blueghost/moonad"
+
+const lazyVal = Lazy.lazy(() => 3)
+
+const extender = <T>(x: Lazy<T>): [T, T, T] => {
+    const { value } = x
+
+    return [value, value, value]
+}
+
+const extendedVal = lazyVal.extend(extender)
+
+console.log(lazyVal.value) // 3
+console.log(extendedVal.value) // [3, 3, 3]
+```
+
+#### apply
+
+Applies the inner value with an applier
+
+```typescript
+export type apply<T, U> = (applier: Lazy<(value: T) => U>): Lazy<U>
+```
+
+```typescript
+import { Lazy } from "@blueghost/moonad"
+
+const lazyVal = Lazy.lazy(() => 3)
+
+const applier = Lazy.pure(<T>(x: T): [T, T, T] => [x, x, x])
+
+const appliedVal = lazyVal.apply(applier)
+
+console.log(lazyVal.value) // 3
+console.log(appliedVal.value) // [3, 3, 3]
+```
