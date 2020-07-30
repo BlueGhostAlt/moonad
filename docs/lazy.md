@@ -49,6 +49,8 @@ console.log(lazyVal.value) // 3
 
 #### map
 
+Maps the inner value with a mapper
+
 ```typescript
 export type map<T, U> = (mapper: (value: T) => U): Lazy<U>
 ```
@@ -67,6 +69,8 @@ console.log(mappedVal.value) // [3, 3, 3]
 ```
 
 #### bind
+
+Binds the inner value with a binder
 
 ```typescript
 export type bind<T, U> = (binder: (value: T) => Lazy<U>): Lazy<U>
