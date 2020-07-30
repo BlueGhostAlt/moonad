@@ -134,3 +134,40 @@ const appliedVal = lazyVal.apply(applier)
 console.log(lazyVal.value) // 3
 console.log(appliedVal.value) // [3, 3, 3]
 ```
+
+#### flat
+
+Flattens the lazy instance
+
+```typescript
+export type flat<T> = (): T extends Lazy<infer _> ? T : never
+```
+
+```typescript
+import { Lazy } from "@blueghost/moonad"
+
+const lazyVal = Lazy.pure(Lazy.lazy(() => 3))
+
+const flattenedVal = lazyVal.flat()
+
+console.log(flattenedVal.value) // 3
+```
+
+#### join
+
+Joins a lazy instance
+
+```typescript
+export type join<T> = (value: Lazy<Lazy<T>>): Lazy<T>
+```
+
+```typescript
+import { Lazy } from "@blueghost/moonad"
+
+const lazyVal = Lazy.lazy(() => Lazy.pure(3))
+
+const joinedVal = Lazy.join(lazyVal)
+
+console.log(joinedVal) // Lazy { _value: { lazy: false, value: 3 } }
+console.log(joinedVal.value) // 3
+```
