@@ -65,15 +65,15 @@ export class Lazy<T> {
     }
 
     /**
-     * Maps the inner value with a mapper
+     * Applies a transformation on the inner value then wraps everything in an unevaluated lazy instance
      *
      * @example
      * const lazyValue: Lazy<number> = Lazy.lazy(() => 3)
      * const mapper = (x: number): number => x * 2
      *
-     * console.log(lazyValue.map(mapper)) // 6
+     * console.log(lazyValue.map(mapper).value) // 6
      *
-     * @param mapper A map function to map the wrapped value with
+     * @param mapper A mapping function to apply on the inner value
      * @returns A lazy instance of the unevaluated mapped value
      */
     public map<U>(mapper: (value: T) => U): Lazy<U> {
@@ -81,15 +81,15 @@ export class Lazy<T> {
     }
 
     /**
-     * Binds the inner value with a binder
+     * Applies a transformation on the inner value then wraps the inner value of the result in an unevaluated lazy instance to ensure maximum delay in evaluation
      *
      * @example
      * const lazyValue: Lazy<number> = Lazy.lazy(() => 3)
      * const binder = (x: number): Lazy<number> => Lazy.lazy(() => x * 2)
      *
-     * console.log(lazyValue.bind(binder)) // 6
+     * console.log(lazyValue.bind(binder).value) // 6
      *
-     * @param binder A bind function to bind the wrapped value with
+     * @param binder A bind function to apply on the inner value
      * @returns A lazy instance of the unevaluated binded value
      */
     public bind<U>(binder: (value: T) => Lazy<U>): Lazy<U> {
@@ -97,7 +97,7 @@ export class Lazy<T> {
     }
 
     /**
-     * Extends the inner value with an extender
+     * Applies a transformation on the lazy value then wraps everything in an unevaluated lazy instance
      *
      * @example
      * const lazyValue: Lazy<number> = Lazy.lazy(() => 3)
@@ -105,7 +105,7 @@ export class Lazy<T> {
      *
      * console.log(lazyValue.extend(extender)) // 6
      *
-     * @param extender An extend function to extend the wrapped value with
+     * @param extender An extend function to apply on the lazy value
      * @returns A lazy instance of the unevaluated extended value
      */
     public extend<U>(extender: (value: Lazy<T>) => U): Lazy<U> {
@@ -113,7 +113,7 @@ export class Lazy<T> {
     }
 
     /**
-     * Applies the inner value with an applier
+     * Applies a transformation on the lazy value then wraps everything in an unevaluated lazy instance
      *
      * @example
      * const lazyValue: Lazy<number> = Lazy.lazy(() => 3)
@@ -121,7 +121,7 @@ export class Lazy<T> {
      *
      * console.log(lazyValue.apply(applier)) // 6
      *
-     * @param applier An apply function to apply the wrapped value with
+     * @param applier An apply function to apply on the value
      * @returns A lazy instance of the unevaluated applied value
      */
     public apply<U>(applier: Lazy<(value: T) => U>): Lazy<U> {
