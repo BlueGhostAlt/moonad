@@ -1,6 +1,24 @@
+<!-- omit in toc -->
 # Lazy Evaluation
 
-## Using the Lazy class
+<!-- omit in toc -->
+## Table of contents
+
+- [Using the Lazy class](#using-the-lazy-class)
+- [Properties](#properties)
+  - [value](#value)
+- [Factories](#factories)
+  - [lazy](#lazy)
+  - [pure](#pure)
+- [Methods](#methods)
+  - [map](#map)
+  - [bind](#bind)
+  - [extend](#extend)
+  - [apply](#apply)
+  - [flat](#flat)
+  - [join](#join)
+
+### Using the Lazy class
 
 To use the lazy wrapper for values, simply import the Lazy class exported from the package:
 
