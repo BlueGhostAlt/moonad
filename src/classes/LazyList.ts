@@ -180,4 +180,22 @@ export class LazyList<T> {
             )
         }
     }
+
+    /**
+     * Returns a record of the lazy list broken up into first element and rest of list
+     *
+     * @example
+     * const lazyList: LazyList<number> = LazyList.fromArray([1, 2, 3])
+     *
+     * const { head, tail } = lazyList.uncons()
+     *
+     * console.log(head.value) // 1
+     * console.log([...tail].map(e => e.value)) // [2, 3]
+     */
+    public uncons(): { head: Lazy<T>; tail: LazyList<T> | null } | null {
+        const { head, tail } = this
+
+        if (!head) return null
+        return { head, tail }
+    }
 }
