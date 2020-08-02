@@ -49,7 +49,7 @@ console.log(lazyVal.value) // 3
 
 #### map
 
-Maps the inner value with a mapper
+Applies a transformation on the inner value then wraps everything in an unevaluated lazy instance
 
 ```typescript
 export type map<T, U> = (mapper: (value: T) => U): Lazy<U>
@@ -70,7 +70,7 @@ console.log(mappedVal.value) // [3, 3, 3]
 
 #### bind
 
-Binds the inner value with a binder
+Applies a transformation on the inner value then wraps the inner value of the result in an unevaluated lazy instance to ensure maximum delay in evaluation
 
 ```typescript
 export type bind<T, U> = (binder: (value: T) => Lazy<U>): Lazy<U>
@@ -91,7 +91,7 @@ console.log(bindedVal.value) // [3, 3, 3]
 
 #### extend
 
-Extends the inner value with an extender
+Applies a transformation on the lazy value then wraps everything in an unevaluated lazy instance
 
 ```typescript
 export type extend<T, U> = (extender: (value: Lazy<T>) => U): Lazy<U>
@@ -116,7 +116,7 @@ console.log(extendedVal.value) // [3, 3, 3]
 
 #### apply
 
-Applies the inner value with an applier
+Applies a transformation on the lazy value then wraps everything in an unevaluated lazy instance
 
 ```typescript
 export type apply<T, U> = (applier: Lazy<(value: T) => U>): Lazy<U>
@@ -137,7 +137,7 @@ console.log(appliedVal.value) // [3, 3, 3]
 
 #### flat
 
-Flattens the lazy instance
+Returns the inner lazy value of a nested lazy value
 
 ```typescript
 export type flat<T> = (): T extends Lazy<infer _> ? T : never
@@ -155,7 +155,7 @@ console.log(flattenedVal.value) // 3
 
 #### join
 
-Joins a lazy instance
+Returns the inner lazy value of a double-nested lazy instance
 
 ```typescript
 export type join<T> = (value: Lazy<Lazy<T>>): Lazy<T>
