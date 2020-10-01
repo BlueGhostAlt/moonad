@@ -8,7 +8,7 @@
 
 ## Typed Functional Utility Library for TypeScript
 
-### `moonad` brings to the table well-known patterns and features from strongly typed functional languages to TypeScript
+### `moonad` brings well-known patterns and features from strongly typed functional languages to TypeScript
 
 ```typescript
 import { Lazy } from "./Lazy"
